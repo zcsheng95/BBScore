@@ -1,0 +1,11 @@
+torch
+pytorch-lightning
+transformers
+numpy
+scipy
+pandas
+pyyaml
+tqdm
+wandb
+filelock
+datasets
