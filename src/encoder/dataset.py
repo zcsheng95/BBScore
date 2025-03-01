@@ -8,7 +8,7 @@ from transformers import (
 )
 
 class Dataset(data.Dataset):
-    #split_pattern = '[SEP]'
+    split_pattern = '[SEP]'
     def __init__(self, model_name, train, config=cfg['data_params']):
         self.config = config
         self.model_name = model_name
@@ -35,7 +35,7 @@ class Dataset(data.Dataset):
         self.end_token = self.tokenizer.eos_token_id
 
         # add special token to separate sentences
-        # self.tokenizer.add_special_tokens({'additional_special_tokens': [self.split_pattern]})
+        self.tokenizer.add_special_tokens({'additional_special_tokens': [self.split_pattern]})
 
 
     def _process_data(self):
