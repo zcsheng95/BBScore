@@ -81,7 +81,8 @@ def main():
 
     # filepath_l = os.path.join(length_dir, f'{truncated_file}.pkl')
     filepath = os.path.join(args.output, f'{truncated_file}-{args.dimension}.pkl')
-
+    if not os.path.exists(args.output):
+        os.makedirs(args.output)
 
     with open(filepath, 'wb') as savef:
         pickle.dump(train_latents, savef)

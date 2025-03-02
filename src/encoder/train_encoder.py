@@ -121,12 +121,12 @@ class BrownianBridgeModel(pl.LightningModule):
         loss = loss_fn.get_loss()
         return loss
 
-    def training_step(self, batch):
+    def training_step(self, batch, batch_idx):
         loss = self.get_losses_for_batch(batch)
         self.log('train_loss', loss.cpu().detach(), prog_bar=True, on_step=True, sync_dist=True, batch_size=self.config['optim_params']['batch_size'])
         return loss
 
-    def test_step(self, batch):
+    def test_step(self, batch, batch_idx):
         loss = self.get_losses_for_batch(batch=batch)
         self.log('test_loss', loss.cpu().detach(), prog_bar=True, on_step=True,sync_dist=True, batch_size=self.config['optim_params']['batch_size'])
 
