@@ -1,4 +1,4 @@
-This repository contains code for paper "BBScore: A Brownian Bridge Based Metric for Assessing Text Coherence" accepted in AAAI 2024.
+This repository contains code for paper "BBScore: A Brownian Bridge Based Metric for Assessing Text Coherence" published in AAAI 2024.
 
 # BBScore calculation
 To calculate BBScore, follow these steps:
